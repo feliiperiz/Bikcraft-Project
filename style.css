@@ -1,10 +1,30 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escuro: #900;
+  --fundo-1: #e7e7e7;
+  --fundo-2: #fff;
+  --texto: #000;
+  --subtitulo: rgba(0, 0, 0, 0.5);
+  --onda: url("./img/onda-clara.svg");
+}
+
+@media (prefers-color-scheme: dark){
+  :root {
+    --fundo-1: #111111;
+    --fundo-2: #000000;
+    --texto: #ffffff;
+    --subtitulo: rgba(255, 255, 255, 0.5);
+    --onda: url("./img/onda-escura.svg");
+  }
+}
+
 /* Reset do CSS */
 * {
   margin: 0;
   padding: 0;
   list-style-type: none;
   text-decoration: none;
-  color: #000;
+  color: var(--texto);
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -24,7 +44,7 @@ body {
   display: grid;
   justify-items: center;
   gap: 3.75rem;
-  background-color: #e7e7e7;
+  background-color: var(--fundo-1);
 }
 
 /* Cabeçalho */
@@ -35,7 +55,7 @@ body {
   margin-top: 3.75rem;
 }
 
-.logo {
+svg {
   justify-self: center;
 }
 
@@ -49,14 +69,14 @@ body {
 .menu-lista {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: #fff;
+  background-color: var(--fundo-2);
   font-size: 1rem;
   text-transform: uppercase;
-  border: 2px solid #fff;
+  border: 2px solid var(--fundo-2);
 }
 
 .menu-lista:hover{
-  border: 2px solid #e21;
+  border: 2px solid var(--cor-primaria);
 }
 
 /* Conteúdo Principal */
@@ -75,7 +95,7 @@ body {
   padding: 1.5rem;
   text-align: right;
   position: relative;
-  background-color: #fff;
+  background-color: var(--fundo-2);
 }
 
 .informacoes::before {
@@ -84,14 +104,14 @@ body {
   display: block;
   width: 3rem;
   height: .25rem;
-  background-color: #e21;
+  background-color: var(--cor-primaria);
   top: 1.5rem;
   right: -1.5rem;
 }
 
 .botao {
   display: inline-block;
-  background-color: #e21;
+  background-color: var(--cor-primaria);
   color: #fff;
   text-transform: uppercase;
   padding: 1rem 2rem;
@@ -99,7 +119,7 @@ body {
 }
 
 .botao:hover {
-  background: #900;
+  background: var(--cor-primaria-escuro);
 }
 
 .bicicleta {
@@ -115,19 +135,19 @@ body {
   text-align: right;
   font-size: 4rem;
   text-transform: uppercase;
-  color: rgba(0,0,0,0.5);
-  background-image: url("./img/onda.svg");
+  color: var(--subtitulo);
+  background-image: var(--onda);
 }
 
 
 .vantagens {
   display: grid;
-  background: #fff;
+  background: var(--fundo-2);
   padding: 2rem;
 }
 
 .vantagens-lista:nth-child(odd) {
-  background: #e7e7e7;
+  background: var(--fundo-1);
 }
 
 .vantagens-lista {
@@ -148,7 +168,7 @@ body {
 
 
 .vantagens-lista:hover {
-  border-left: 4px solid #e21;
+  border-left: 4px solid var(--cor-primaria);
 }
 
 /* Rodapé */
@@ -159,7 +179,7 @@ body {
   justify-content: center;
   padding: 3rem;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--fundo-2);
 }
 
 /* Layout Responsivo */
